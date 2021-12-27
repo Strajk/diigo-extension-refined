@@ -53,7 +53,7 @@ var googleSites = [
   "www.google.lt",
   "www.google.com.ar",
   "www.google.bi",
-  "http://paoniu8.blogbus.com",
+  "https://paoniu8.blogbus.com",
   "www.google.pn",
   "www.google.li",
   "www.google.com.nf",
@@ -514,13 +514,13 @@ function bindCenter() {
   }
   //use css3 to build bg-image
   /* for(var i=0; i<center.children.length; i++) {
-  	var handle = center.children[i];
-  	
-  	if (handle.className && handle.className.indexOf('dragresize')>-1) {
-  		console.log(rootURL+'images/spot.png');
-  		setStyle(handle, 'background-image', rootURL+'images/spot.png');
-  	}
-  } */
+		var handle = center.children[i];
+		
+		if (handle.className && handle.className.indexOf('dragresize')>-1) {
+			console.log(rootURL+'images/spot.png');
+			setStyle(handle, 'background-image', rootURL+'images/spot.png');
+		}
+	} */
   //1. unbind wrapper mousedown
   //2. bind drag and
 }

@@ -46,7 +46,7 @@ var diigoUtils = {
     if (window.DIIGO_REQUEST_SERVER) {
       server = window.DIIGO_REQUEST_SERVER;
     } else {
-      server = "http://" + document.domain;
+      server = "https://" + document.domain;
     }
     return server + "/chappai/pv=#{pv}/ct=pj/cv=#{cv}/user=#{user}/cmd=#{cmd}/from=#{from}/";
   },

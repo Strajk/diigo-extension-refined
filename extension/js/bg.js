@@ -17,8 +17,8 @@ var doc_html = "",
 D.useConfig = function (a) {
   D.config = {
     cn: {
-      TOOLBAR_SERVER: "http://toolbar3.diigo.cn",
-      UPLOAD_SERVER: "http://www.diigo.cn",
+      TOOLBAR_SERVER: "https://toolbar3.diigo.cn",
+      UPLOAD_SERVER: "https://www.diigo.cn",
       DOMAIN: "diigo.cn",
     },
     www: {
@@ -477,7 +477,7 @@ var Messenger = {
     ifSignIn: function () {
       chrome.cookies.get(
         {
-          url: "http://www.diigo.com",
+          url: "https://www.diigo.com",
           name: "diigoandlogincookie",
         },
         function (a) {
@@ -672,7 +672,7 @@ var Messenger = {
       var d = a.details.url;
       debug("[bit.ly short url] making", d);
       $.ajax({
-        url: "http://api.bit.ly/shorten?version=2.0.1&login=diigo&apiKey=R_051efe0ca04a325db066155db77c2d08&longUrl=" + encodeURIComponent(d),
+        url: "https://api.bit.ly/shorten?version=2.0.1&login=diigo&apiKey=R_051efe0ca04a325db066155db77c2d08&longUrl=" + encodeURIComponent(d),
         timeout: 1e4,
         type: "GET",
         complete: function (e, f) {
@@ -1418,7 +1418,7 @@ var Prefs = {
 D.searchDiigoGoogle = function (a, b) {
   if (a && a.length > 0) {
     var c = {
-      url: "http://www.diigo.com/search/g?q=" + encodeURIComponent(a) + "&sa=Search",
+      url: "https://www.diigo.com/search/g?q=" + encodeURIComponent(a) + "&sa=Search",
     };
     if (b) c.index = b.index + 1;
     chrome.tabs.create(c);

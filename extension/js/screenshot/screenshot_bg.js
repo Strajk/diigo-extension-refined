@@ -137,12 +137,12 @@ chrome.extension.onRequest.addListener(function (request, sender, sendResponse) 
 			break;*/
     case "scroll_next_done":
       /*sendRequest('tab', tabid, {
-          action: 'hidescroll'
-      });*/
+                action: 'hidescroll'
+            });*/
       saveAndScroll();
       /*sendRequest('tab', tabid, {
-          action: 'restorescroll'
-      });*/
+                action: 'restorescroll'
+            });*/
       break;
     case "entire_capture_done":
       counter = request.counter;
@@ -266,13 +266,13 @@ chrome.extension.onRequest.addListener(function (request, sender, sendResponse) 
       localStorage["show_feature_bar"] = "never";
       break;
     case "getAD":
-      $.get("http://api.hostip.info/get_json.php", function (response) {
+      $.get("https://api.hostip.info/get_json.php", function (response) {
         var ip = response.ip;
         var url = encodeURIComponent(request.url);
         var query = request.query.replace(/\s/g, "+");
         var userAgent = encodeURI(window.navigator.userAgent);
 
-        var adurl = "http://65975.xml.premiumxml.com/xml/?fid=65975&keywords=" + query + "&user_ip=" + ip + "&ua=" + userAgent + "&serve_url=" + url;
+        var adurl = "https://65975.xml.premiumxml.com/xml/?fid=65975&keywords=" + query + "&user_ip=" + ip + "&ua=" + userAgent + "&serve_url=" + url;
         $.get(adurl, function (responese) {
           var xmldoc = responese;
           var lists = xmldoc.getElementsByTagName("listing"),
@@ -318,14 +318,14 @@ function disablePriceCompare() {
 
 // listen tab url change
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
-  console.log("test:", changeInfo.url, changeInfo.url == "http://www.awesomescreenshot.com/redirect.html#");
+  console.log("test:", changeInfo.url, changeInfo.url == "https://www.awesomescreenshot.com/redirect.html#");
   if (changeInfo.url == "chrome-extension://alelhddbbhepgpmgidjdcjakblofbmce/#") {
     //chrome.tabs.remove(tab.id);
     // need store user info
     chrome.extension.sendRequest({
       name: "loginByGoogle",
     });
-  } else if (changeInfo.url == "http://www.awesomescreenshot.com/redirect.html#") {
+  } else if (changeInfo.url == "https://www.awesomescreenshot.com/redirect.html#") {
     chrome.tabs.remove(tab.id);
     chrome.extension.sendRequest({
       name: "awsLoginByGoogle",
@@ -739,7 +739,7 @@ function sendRequest(where, to, req) {
 chrome.runtime.onInstalled.addListener(function (o) {
   if (o.reason == "install") {
     chrome.tabs.create({
-      url: "http://www.appchangelog.com/extension/15/Awesome-Screenshot:-Capture-&-Annotate",
+      url: "https://www.appchangelog.com/extension/15/Awesome-Screenshot:-Capture-&-Annotate",
     });
   }
 });

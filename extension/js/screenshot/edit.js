@@ -22,7 +22,7 @@ var compressRatio = 80,
   resizeFactor = 100;
 var shift = false;
 
-var server_url = "http://www.awesomescreenshot.com";
+var server_url = "https://www.awesomescreenshot.com";
 /*var server_url = 'http://127.0.0.1';*/
 
 var isAppInstalled = false;
@@ -576,8 +576,8 @@ function prepareTools() {
   });
 
   /*shortcuts
-   if (localStorage['shortcuts']) bindShortcuts();
-   */
+     if (localStorage['shortcuts']) bindShortcuts();
+     */
 }
 
 function bindShortcuts() {
@@ -727,8 +727,8 @@ function i18n() {
   //need refinement
   return;
   /*$('#tool-panel .tip').each(function(i) {
-   $(this).text(chrome.i18n.getMessage('tip'+(i+1)));
-   });*/
+     $(this).text(chrome.i18n.getMessage('tip'+(i+1)));
+     });*/
   /*$('#logo').text(chrome.i18n.getMessage('logo'));*/
   $("title").text(chrome.i18n.getMessage("editTitle"));
   document.getElementById("save").lastChild.data = chrome.i18n.getMessage("saveBtn");
@@ -745,7 +745,7 @@ function i18n() {
   });
   //v2.4 - share tooltip
   $("#share")[0].innerHTML +=
-    '<div class="tip">[?]<div>Images hosted on <a href="http://awesomescreenshot.com" target="_blank">awesomescreenshot.com</a></div></div>';
+    '<div class="tip">[?]<div>Images hosted on <a href="https://awesomescreenshot.com" target="_blank">awesomescreenshot.com</a></div></div>';
 }
 
 function save() {
@@ -789,10 +789,10 @@ function save() {
 
   function prepareImage() {
     /* function compress() {
-     var CanvasPixelArray = showCtx.getImageData(0,0,editW,editH);
-     var myThreadedEncoder = new JPEGEncoderThreaded('javascripts/jpeg_encoder_threaded_worker.js');
-     myThreadedEncoder.encode(CanvasPixelArray, 100, buildImage, true);
-     } */
+         var CanvasPixelArray = showCtx.getImageData(0,0,editW,editH);
+         var myThreadedEncoder = new JPEGEncoderThreaded('javascripts/jpeg_encoder_threaded_worker.js');
+         myThreadedEncoder.encode(CanvasPixelArray, 100, buildImage, true);
+         } */
 
     function buildImage(image) {
       if ($("#saveImage")[0].src != image) {
@@ -815,8 +815,8 @@ function save() {
     }
 
     /* if (localStorage['format'] && localStorage['format']=='jpg')
-     compress();
-     else  */
+         compress();
+         else  */
     if (localStorage["format"] == "jpg") {
       imageData = editor.getImageDataURL("image/jpeg");
     } else {

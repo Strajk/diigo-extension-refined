@@ -107,7 +107,7 @@ UI.BindFunction = function () {
 };
 UI.getFavicon = function (b) {
   b = b.match(/\/\/(.*?)\//)[1];
-  var a = "chrome://favicon/http://" + b;
+  var a = "chrome://favicon/https://" + b;
   try {
     requestFile(
       a,

@@ -997,7 +997,7 @@ $(document).ready(function () {
       ) - 1;
     var res = diigoAnnotationHelper.parseRange(pageIndex, rg);
     var text = res.text;
-    window.open("http://www.diigo.com/search/g?q=" + encodeURIComponent(text), "_blank");
+    window.open("https://www.diigo.com/search/g?q=" + encodeURIComponent(text), "_blank");
   });
 
   $("#viewer").on("mousedown", ".diigolet-csm-highlightAndComment", function () {
@@ -1597,7 +1597,7 @@ function share(share_way) {
     var twitter_share = "https://twitter.com/share";
     to_url = twitter_share + "?url=" + encodeURIComponent(share_link) + "&text=" + encodeURIComponent(share_text);
   } else if (share_way == "facebook") {
-    var facebook_share = "http://www.facebook.com/sharer.php";
+    var facebook_share = "https://www.facebook.com/sharer.php";
     to_url = facebook_share + "?src=bm&u=" + encodeURIComponent(share_link) + "&t=" + encodeURIComponent(share_text);
   } else if (share_way == "g-plus") {
     var g_plus_share = "https://plus.google.com/share?url=";

@@ -689,7 +689,7 @@ Readability.prototype = {
 
         // Turn all divs that don't have children block level elements into p's
         if (node.tagName === "DIV") {
-          // Sites like http://mobile.slate.com encloses each paragraph with a DIV
+          // Sites like https://mobile.slate.com encloses each paragraph with a DIV
           // element. DIVs with only a P element inside and no text content can be
           // safely converted into plain P elements to avoid confusing the scoring
           // algorithm with DIVs with are, in practice, paragraphs.
@@ -1176,7 +1176,7 @@ Readability.prototype = {
       }
 
       // EW-CMS specific segment replacement. Ugly.
-      // Example: http://www.ew.com/ew/article/0,,20313460_20369436,00.html
+      // Example: https://www.ew.com/ew/article/0,,20313460_20369436,00.html
       if (segment.indexOf(",00") !== -1) segment = segment.replace(",00", "");
 
       // If our first or second segment has anything looking like a page number, remove it.
@@ -1259,7 +1259,7 @@ Readability.prototype = {
 
       // If the articleBaseUrl isn't part of this URL, penalize this link. It could
       // still be the link, but the odds are lower.
-      // Example: http://www.actionscript.org/resources/articles/745/1/JavaScript-and-VBScript-Injection-in-ActionScript-3/Page1.html
+      // Example: https://www.actionscript.org/resources/articles/745/1/JavaScript-and-VBScript-Injection-in-ActionScript-3/Page1.html
       if (linkHref.indexOf(articleBaseUrl) !== 0) linkObj.score -= 25;
 
       var linkData = linkText + " " + link.className + " " + link.id;

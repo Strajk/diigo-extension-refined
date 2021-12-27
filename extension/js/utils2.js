@@ -147,7 +147,7 @@ function scan(a, c, b) {
 }
 
 function parseDomain(a) {
-  /^[^:\/?#]+:\/\//.test(a) || (a = "http://" + a);
+  /^[^:\/?#]+:\/\//.test(a) || (a = "https://" + a);
   a = a.match(/^(([^:\/?#]+):)?(\/\/([^\/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?/);
   return trim(a[4].toLowerCase());
 }

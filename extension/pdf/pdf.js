@@ -7227,7 +7227,7 @@ PDFJS.build = "e68a5c0";
 
   var SVGGraphics = (function SVGGraphicsClosure() {
     function createScratchSVG(width, height) {
-      var NS = "http://www.w3.org/2000/svg";
+      var NS = "https://www.w3.org/2000/svg";
       var svg = document.createElementNS(NS, "svg:svg");
       svg.setAttributeNS(null, "version", "1.1");
       svg.setAttributeNS(null, "width", width + "px");
@@ -7325,9 +7325,9 @@ PDFJS.build = "e68a5c0";
       this.cssStyle = null;
     }
 
-    var NS = "http://www.w3.org/2000/svg";
-    var XML_NS = "http://www.w3.org/XML/1998/namespace";
-    var XLINK_NS = "http://www.w3.org/1999/xlink";
+    var NS = "https://www.w3.org/2000/svg";
+    var XML_NS = "https://www.w3.org/XML/1998/namespace";
+    var XLINK_NS = "https://www.w3.org/1999/xlink";
     var LINE_CAP_STYLES = ["butt", "round", "square"];
     var LINE_JOIN_STYLES = ["miter", "round", "bevel"];
     var clipCount = 0;

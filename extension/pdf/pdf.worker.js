@@ -6732,7 +6732,7 @@ PDFJS.build = "e68a5c0";
     // Lets URLs beginning with 'www.' default to using the 'http://' protocol.
     function addDefaultProtocolToUrl(url) {
       if (url && url.indexOf("www.") === 0) {
-        return "http://" + url;
+        return "https://" + url;
       }
       return url;
     }

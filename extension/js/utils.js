@@ -462,7 +462,7 @@ function normalizeUrl(a) {
 }
 
 function parseDomain(a) {
-  /^[^:\/?#]+:\/\//.test(a) || (a = "http://" + a);
+  /^[^:\/?#]+:\/\//.test(a) || (a = "https://" + a);
   return a
     .match(/^(([^:\/?#]+):)?(\/\/([^\/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?/)[4]
     .toLowerCase()
