@@ -424,13 +424,22 @@ window.diigolet == undefined &&
         mousedownTop = a.pageY;
         mousedownLeft = a.pageX;
       })
-        .mouseup(dc)
+        .mouseup(dc) /// NOTE(@strajk): this takes care of hiding
         .mouseover(ec)
         .mouseout(fc)
         .mousemove(function (a) {
           window.curcorX = a.pageX;
           window.curcorY = a.pageY;
         });
+
+      /* <@STRAJK> */
+      $(document.body).on('keydown', function(e){ /* Beware: `esc` is not working with keypress, only keydown */
+        if(e.key === 'Escape'){
+          ga.hide(); // `ga` refers to popup
+        }
+      });
+      /* </@STRAJK> */
+
       $(document.body).click(function (a) {
         var c = $(a.target);
         if (c.hasClass("_diigoLink")) {
@@ -7524,12 +7533,19 @@ window.diigolet == undefined &&
           document.createRange();
           new Date().getTime();
           Math.random().toString().substr(2);
-          if (window.getSelection().toString().length > 0) {
+
+          /* <@STRAJK> */
+          const selection = window.getSelection();
+          const id = selection.baseNode && selection.baseNode.getAttribute && selection.baseNode.getAttribute("id")
+          if (
+            selection.toString().length > 0 &&
+            id !== "copylAddress" // TODO: Explain
+          ) {
             this.j
               .show()
               .css({
                 left: a.pageX + 3,
-                top: a.pageY + 3,
+                top: a.pageY + 3 + 10, // <@STRAJK>: added +10
               })
               .show();
             chrome.storage.local.get(null, function (d) {
@@ -7537,6 +7553,10 @@ window.diigolet == undefined &&
             });
             this.shown = true;
           }
+          setTimeout(() => {
+            this.hide()
+          }, 5000)
+          /* </@STRAJK> */
         },
         hide: function () {
           this.j.hide();
@@ -7882,6 +7902,11 @@ window.diigolet == undefined &&
               });
             }
           this.j.show();
+          /* <@STRAJK> */
+          setTimeout(() => {
+            ga.hide()
+          }, 2000)
+          /* </@STRAJK> */
           this.shown = true;
         },
         scheduleToggleEdit: function (a) {

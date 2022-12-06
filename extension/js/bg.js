@@ -1418,7 +1418,9 @@ var Prefs = {
 D.searchDiigoGoogle = function (a, b) {
   if (a && a.length > 0) {
     var c = {
-      url: "https://www.diigo.com/search/g?q=" + encodeURIComponent(a) + "&sa=Search",
+      /* <@STRAJK> */
+      url: "https://www.google.com/search?q=" + encodeURIComponent(a),
+      /* </@STRAJK> */
     };
     if (b) c.index = b.index + 1;
     chrome.tabs.create(c);
