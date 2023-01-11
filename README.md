@@ -17,6 +17,7 @@ Still, I'm using it all the time, and couldn't resist tweaking it a bit to my ta
 > Changes highlighted by `<@STRAJK>` and `</@STRAJK>` comments in the code
 
 - Improved logic for showing "mini search/highlight popup" (when `Upon text selection, show mini search/highlight popup` is enabled)
+- Enabled submitting the bookmarking form by "cmd + enter"
 - Replaced `diigo.com/search` with `google.com/search` as the default search action
   - I'm sorry, but the original diigo.com/search is just horrible.
   - Diigo extension shows personalized results also directly in Google Search results, so there's no reason to not use the official Google Search.
@@ -37,3 +38,15 @@ Still, I'm using it all the time, and couldn't resist tweaking it a bit to my ta
 
 I'm not the author of the extension itself - the Diigo team is. But sadly, it's not open-source, so I can't offer my changes back to the original.
 I just downloaded the extension from Google Chrome Web Store, unpacked it, unbundled it, formatted it, and made some changes.
+
+
+### My notes
+
+- `bookmark-window.html`
+  - showing logic in diigolet.js
+- `popup.html`
+  - browser action popup
+- `popup-savebookmark.html`
+  - seems unused
+- `popup2.html`
+  - seems unused

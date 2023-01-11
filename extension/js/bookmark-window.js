@@ -484,9 +484,18 @@ function initBookmarkWindow(a) {
   $("#diigobm-recent-tag,#diigobm-recommend-tag,#diigobm-group-tag").on("click", "div", function (c) {
     /diigo\-tag/.test(c.target.className) && toggleTag($(this).text());
   });
+
   $("#diigobm-saveBtn").on("click", function () {
     isInResearchMode() ? saveResearchMode(formToObject) : formToObject();
   });
+
+  // Enable submitting the form by "cmd + enter"
+  $("#bm-main").keydown(function (event) {
+    if (event.metaKey && event.keyCode === 13) { // cmd + enter
+      isInResearchMode() ? saveResearchMode(formToObject) : formToObject() // copy of the above
+    }
+  });
+
   $("#bottom").on("click", function (c) {
     switch (c.target.id) {
       case "diigobm-saveBtn":
